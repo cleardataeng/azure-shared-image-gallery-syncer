@@ -1,0 +1,42 @@
+{
+  "manifestVersion": 1,
+  "id": "ClearDATANetworks",
+  "name": "ClearDATA Shared Gallery Sync",
+  "version": "1.0.33",
+  "publisher": "ClearDATANetworks",
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "description": "This extenstion allows you to sync a remote shared image gallery with your local gallery across tenants.",
+  "categories": [
+    "Azure Pipelines"
+  ],
+  "icons": {
+    "default": "extension-icon.png"
+  },
+  "content": {
+    "details": {
+      "path": "readme.md"
+    }
+  },
+  "files": [
+    {
+      "path": "build",
+      "packagePath": "build"
+    }
+  ],
+  "contributions": [
+    {
+      "id": "build-task",
+      "type": "ms.vss-distributed-task.task",
+      "targets": [
+        "ms.vss-distributed-task.tasks"
+      ],
+      "properties": {
+        "name": "build"
+      }
+    }
+  ]
+}
