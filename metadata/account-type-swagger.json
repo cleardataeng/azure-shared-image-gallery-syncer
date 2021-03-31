@@ -167,6 +167,10 @@
                 "properties": {
                     "type": "object",
                     "properties": {
+                        "provisioningState": {
+                            "type": "string",
+                            "description": "State of the operation"
+                        },
                         "displayName": {
                             "type": "string",
                             "description": "Source display Name"
