@@ -182,7 +182,8 @@
             "description": "properties property"
           }
         },
-        "description": "Body payload for accountType PUT"
+        "description": "Body payload for accountType PUT",
+        "x-ms-azure-resource": true
       }
     }
   }
