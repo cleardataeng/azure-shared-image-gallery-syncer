@@ -81,11 +81,7 @@
                 ],
                 "parameters": [
                     {
-                        "in": "query",
-                        "name": "api-version",
-                        "description": "api-version is required. Valid versions are 2018-09-01-preview",
-                        "required": true,
-                        "type": "string"
+                    "$ref": "#/parameters/ApiVersionParameter"
                     },
                     {
                         "in": "path",
@@ -168,10 +164,6 @@
                     "type": "string",
                     "description": "Region resource will be saved in"
                 },
-                "apiVersion": {
-                    "type": "string",
-                    "description": "version of api for resource"
-                },
                 "properties": {
                     "type": "object",
                     "properties": {
@@ -205,6 +197,15 @@
                 }
             ],
             "description": "Body payload for accountType PUT"
+        }
+    },
+    "parameters": {
+        "ApiVersionParameter": {
+            "name": "api-version",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "Client Api Version."
         }
     }
 }
