@@ -158,6 +158,28 @@
             "description": "The resource definition.",
             "x-ms-azure-resource": true
         },
+        "ResourceIn": {
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Resource Id"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Resource name"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "Resource type"
+                },
+                "location": {
+                    "type": "string",
+                    "description": "Resource location"
+                }
+            },
+            "description": "The resource definition.",
+            "x-ms-azure-resource": true
+        },
         "accountTypePutParameters": {
             "properties": {
                 "location": {
@@ -195,6 +217,11 @@
                     "description": "properties property"
                 }
             },
+            "allOf": [
+                {
+                    "$ref": "#/definitions/ResourceIn"
+                }
+            ],
             "description": "Body payload for accountType PUT"
         },
         "accountTypePutOutput": {
