@@ -116,7 +116,7 @@
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/accountTypePutParameters"
+                            "$ref": "#/definitions/accountTypePutRequestParameters"
                         },
                         "description": "Parameters to the accountType PUT function"
                     }
@@ -200,6 +200,45 @@
                     "$ref": "#/definitions/Resource"
                 }
             ],
+            "description": "Body payload for accountType PUT"
+        },
+        "accountTypePutRequestParameters": {
+            "properties": {
+                "location": {
+                    "type": "string",
+                    "description": "Region resource will be saved in"
+                },
+                "properties": {
+                    "type": "object",
+                    "properties": {
+                        "provisioningState": {
+                            "type": "string",
+                            "description": "State of the operation"
+                        },
+                        "displayName": {
+                            "type": "string",
+                            "description": "Source display Name"
+                        },
+                        "tenantId": {
+                            "type": "string",
+                            "description": "Source tenant Id"
+                        },
+                        "subscriptionId": {
+                            "type": "string",
+                            "description": "Source subscription Id"
+                        },
+                        "accountType": {
+                            "type": "string",
+                            "description": "Source account-type"
+                        },
+                        "accountTypeStatus": {
+                            "type": "string",
+                            "description": "Source accountTypeStatus"
+                        }
+                    },
+                    "description": "properties property"
+                }
+            },
             "description": "Body payload for accountType PUT"
         }
     },
