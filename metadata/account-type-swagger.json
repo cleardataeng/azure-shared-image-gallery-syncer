@@ -63,7 +63,7 @@
                     "200": {
                         "description": "The OK response",
                         "schema": {
-                            "$ref": "#/definitions/accountTypePutOutput"
+                            "$ref": "#/definitions/accountTypeParameters"
                         }
                     }
                 }
@@ -116,7 +116,7 @@
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/accountTypePutParameters"
+                            "$ref": "#/definitions/accountTypeParameters"
                         },
                         "description": "Parameters to the accountType PUT function"
                     }
@@ -125,7 +125,7 @@
                     "200": {
                         "description": "The OK response",
                         "schema": {
-                            "$ref": "#/definitions/accountTypePutOutput"
+                            "$ref": "#/definitions/accountTypeParameters"
                         }
                     }
                 }
@@ -158,73 +158,7 @@
             "description": "The resource definition.",
             "x-ms-azure-resource": true
         },
-        "ResourceIn": {
-            "properties": {
-                "id": {
-                    "type": "string",
-                    "description": "Resource Id"
-                },
-                "name": {
-                    "type": "string",
-                    "description": "Resource name"
-                },
-                "type": {
-                    "type": "string",
-                    "description": "Resource type"
-                },
-                "location": {
-                    "type": "string",
-                    "description": "Resource location"
-                }
-            },
-            "description": "The resource definition.",
-            "x-ms-azure-resource": true
-        },
-        "accountTypePutParameters": {
-            "properties": {
-                "location": {
-                    "type": "string",
-                    "description": "Region resource will be saved in"
-                },
-                "properties": {
-                    "type": "object",
-                    "properties": {
-                        "provisioningState": {
-                            "type": "string",
-                            "description": "State of the operation"
-                        },
-                        "displayName": {
-                            "type": "string",
-                            "description": "Source display Name"
-                        },
-                        "tenantId": {
-                            "type": "string",
-                            "description": "Source tenant Id"
-                        },
-                        "subscriptionId": {
-                            "type": "string",
-                            "description": "Source subscription Id"
-                        },
-                        "accountType": {
-                            "type": "string",
-                            "description": "Source account-type"
-                        },
-                        "accountTypeStatus": {
-                            "type": "string",
-                            "description": "Source accountTypeStatus"
-                        }
-                    },
-                    "description": "properties property"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "#/definitions/ResourceIn"
-                }
-            ],
-            "description": "Body payload for accountType PUT"
-        },
-        "accountTypePutOutput": {
+        "accountTypeParameters": {
             "properties": {
                 "location": {
                     "type": "string",
