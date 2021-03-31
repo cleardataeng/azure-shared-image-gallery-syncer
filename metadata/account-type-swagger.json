@@ -159,7 +159,6 @@
                     "description": "Resource location"
                 }
             },
-            "required": [],
             "description": "The resource definition.",
             "x-ms-azure-resource": true
         },
