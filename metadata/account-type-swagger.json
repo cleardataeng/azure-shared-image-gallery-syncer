@@ -33,28 +33,28 @@
             {
               "in": "path",
               "name": "subscriptionId",
-              "description": "subscriptionId",
+              "description": "This is the Id of the subscription",
               "required": true,
               "type": "string"
             },
             {
               "in": "path",
               "name": "resourceGroupName",
-              "description": "resourceGroupName",
+              "description": "This is the resource group name where the managed app is deployed",
               "required": true,
               "type": "string"
             },
             {
               "in": "path",
               "name": "minirpname",
-              "description": "subscriptionId",
+              "description": "This is the resource provider name",
               "required": true,
               "type": "string"
             },
             {
               "in": "path",
               "name": "name",
-              "description": "name",
+              "description": "This is the document name",
               "required": true,
               "type": "string"
             }
@@ -90,28 +90,28 @@
             {
               "in": "path",
               "name": "subscriptionId",
-              "description": "subscriptionId",
+              "description": "This is the Id of the subscription",
               "required": true,
               "type": "string"
             },
             {
               "in": "path",
               "name": "resourceGroupName",
-              "description": "resourceGroupName",
+              "description": "This is the resource group name where the managed app is deployed",
               "required": true,
               "type": "string"
             },
             {
               "in": "path",
               "name": "minirpname",
-              "description": "subscriptionId",
+              "description": "This is the resource provider name",
               "required": true,
               "type": "string"
             },
             {
               "in": "path",
               "name": "name",
-              "description": "name",
+              "description": "This is the document name",
               "required": true,
               "type": "string"
             },
@@ -144,19 +144,19 @@
             "properties": {
               "displayName": {
                 "type": "string",
-                "description": "Source displayName"
+                "description": "Source display Name"
               },
               "tenantId": {
                 "type": "string",
-                "description": "Source tenantId"
+                "description": "Source tenant Id"
               },
               "subscriptionId": {
                 "type": "string",
-                "description": "Source subscriptionId"
+                "description": "Source subscription Id"
               },
               "type": {
                 "type": "string",
-                "description": "Source type"
+                "description": "Source account-type"
               },
               "accountTypeStatus": {
                 "type": "string",
