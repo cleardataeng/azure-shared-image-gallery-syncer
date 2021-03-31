@@ -4,11 +4,14 @@
       "title": "Azure Functions Open API Extension",
       "version": "1.0.0"
     },
-    "host": "localhost:7071",
-    "basePath": "/api",
+    "host": "management.azure.com",
     "schemes": [
-      "http"
+      "https"
     ],
+    "security": [
+      {}
+    ],
+    "securityDefinitions": {},
     "paths": {
       "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CustomProviders/resourceProviders/{minirpname}/accountType/{name}": {
         "get": {
@@ -63,12 +66,7 @@
                 "type": "string"
               }
             }
-          },
-          "security": [
-            {
-              "function_key": []
-            }
-          ]
+          }
         },
         "put": {
           "tags": [
@@ -118,11 +116,13 @@
               "type": "string"
             },
             {
+              "name": "parameters",
               "in": "body",
-              "name": "body",
+              "required": true,
               "schema": {
-                "type": "object"
-              }
+                "$ref": "#/definitions/accountTypePutParameters"
+              },
+              "description": "Parameters to the accountType PUT function"
             }
           ],
           "responses": {
@@ -132,25 +132,41 @@
                 "type": "string"
               }
             }
-          },
-          "security": [
-            {
-              "function_key": []
-            }
-          ]
+          }
         }
       }
     },
     "definitions": {
-      "object": {
-        "type": "object"
-      }
-    },
-    "securityDefinitions": {
-      "function_key": {
-        "type": "apiKey",
-        "name": "code",
-        "in": "query"
+      "accountTypePutParameters": {
+        "properties": {
+          "properties": {
+            "type": "object",
+            "properties": {
+              "displayName": {
+                "type": "string",
+                "description": "Source displayName"
+              },
+              "tenantId": {
+                "type": "string",
+                "description": "Source tenantId"
+              },
+              "subscriptionId": {
+                "type": "string",
+                "description": "Source subscriptionId"
+              },
+              "type": {
+                "type": "string",
+                "description": "Source type"
+              },
+              "accountTypeStatus": {
+                "type": "string",
+                "description": "Source accountTypeStatus"
+              }
+            },
+            "description": "properties property"
+          }
+        },
+        "description": "Body payload for accountType PUT"
       }
     }
   }
