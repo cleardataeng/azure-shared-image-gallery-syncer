@@ -139,6 +139,22 @@
     "definitions": {
       "accountTypePutParameters": {
         "properties": {
+            "location": {
+                "type":"string",
+                "description": "Region resource will be saved in"
+            },
+            "name": {
+                "type":"string",
+                "description": "The title of the resource"
+            },
+            "apiVersion": {
+                "type":"string",
+                "description": "version of api for resource"
+            },
+            "type": {
+                "type":"string",
+                "description": "the typeof resource"
+            },
           "properties": {
             "type": "object",
             "properties": {
