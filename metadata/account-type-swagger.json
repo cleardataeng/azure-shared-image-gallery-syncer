@@ -116,7 +116,7 @@
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/accountTypePutRequestParameters"
+                            "$ref": "#/definitions/accountTypePutParameters"
                         },
                         "description": "Parameters to the accountType PUT function"
                     }
@@ -125,7 +125,7 @@
                     "200": {
                         "description": "The OK response",
                         "schema": {
-                            "$ref": "#/definitions/accountTypePutParameters"
+                            "$ref": "#/definitions/accountTypePutOutput"
                         }
                     }
                 }
@@ -195,14 +195,9 @@
                     "description": "properties property"
                 }
             },
-            "allOf": [
-                {
-                    "$ref": "#/definitions/Resource"
-                }
-            ],
             "description": "Body payload for accountType PUT"
         },
-        "accountTypePutRequestParameters": {
+        "accountTypePutOutput": {
             "properties": {
                 "location": {
                     "type": "string",
@@ -239,6 +234,11 @@
                     "description": "properties property"
                 }
             },
+            "allOf": [
+                {
+                    "$ref": "#/definitions/Resource"
+                }
+            ],
             "description": "Body payload for accountType PUT"
         }
     },
