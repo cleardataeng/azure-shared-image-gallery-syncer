@@ -125,7 +125,7 @@
                     "200": {
                         "description": "The OK response",
                         "schema": {
-                            "$ref": "#/definitions/accountTypePutParameters"
+                            "$ref": "#/definitions/accountTypePutOutput"
                         }
                     }
                 }
@@ -159,6 +159,45 @@
             "x-ms-azure-resource": true
         },
         "accountTypePutParameters": {
+            "properties": {
+                "location": {
+                    "type": "string",
+                    "description": "Region resource will be saved in"
+                },
+                "properties": {
+                    "type": "object",
+                    "properties": {
+                        "provisioningState": {
+                            "type": "string",
+                            "description": "State of the operation"
+                        },
+                        "displayName": {
+                            "type": "string",
+                            "description": "Source display Name"
+                        },
+                        "tenantId": {
+                            "type": "string",
+                            "description": "Source tenant Id"
+                        },
+                        "subscriptionId": {
+                            "type": "string",
+                            "description": "Source subscription Id"
+                        },
+                        "accountType": {
+                            "type": "string",
+                            "description": "Source account-type"
+                        },
+                        "accountTypeStatus": {
+                            "type": "string",
+                            "description": "Source accountTypeStatus"
+                        }
+                    },
+                    "description": "properties property"
+                }
+            },
+            "description": "Body payload for accountType PUT"
+        },
+        "accountTypePutOutput": {
             "properties": {
                 "location": {
                     "type": "string",
