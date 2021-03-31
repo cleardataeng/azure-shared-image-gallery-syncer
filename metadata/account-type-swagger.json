@@ -2,7 +2,7 @@
     "swagger": "2.0",
     "info": {
       "title": "Azure Functions Open API Extension",
-      "version": "1.0.0"
+      "version": "2018-09-01-preview"
     },
     "host": "management.azure.com",
     "schemes": [
