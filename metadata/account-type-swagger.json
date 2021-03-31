@@ -179,7 +179,7 @@
                             "type": "string",
                             "description": "Source subscription Id"
                         },
-                        "type": {
+                        "accountType": {
                             "type": "string",
                             "description": "Source account-type"
                         },
