@@ -1,0 +1,77 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Azure Functions Open API Extension",
+        "version": "2018-09-01-preview"
+    },
+    "host": "management.azure.com",
+    "schemes": [
+        "https"
+    ],
+    "security": [
+        {}
+    ],
+    "securityDefinitions": {},    
+    "paths": {
+        "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.CustomProviders/resourceproviders/{minirpname}/TransitionAccount": {
+            "post": {
+                "tags": [
+                    "PostTransitionAccount"
+                ],
+                "operationId": "PostTransitionAccount",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "api-version",
+                        "description": "api-version is required. Valid versions are 2018-09-01-preview",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "path",
+                        "name": "subscriptionId",
+                        "description": "This is the Id of the subscription",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "path",
+                        "name": "resourceGroupName",
+                        "description": "This is the resource group name where the managed app is deployed",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "path",
+                        "name": "minirpname",
+                        "description": "This is the resource provider name",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The OK response",
+                        "schema": {}
+                    },
+                    "500": {
+                        "description": "The InternalServerError response",
+                        "schema": {}
+                    }
+                }
+            }            
+        }
+    },
+    "parameters": {
+        "ApiVersionParameter": {
+            "name": "api-version",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "Client Api Version."
+        }
+    }
+}
