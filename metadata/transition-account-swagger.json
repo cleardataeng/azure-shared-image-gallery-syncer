@@ -13,7 +13,7 @@
     ],
     "securityDefinitions": {},    
     "paths": {
-        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CustomProviders/resourceProviders/{minirpname}/TransitionAccount": {
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CustomProviders/resourceProviders/{minirpname}/transitionAccount": {
             "post": {
                 "tags": [
                     "PostTransitionAccount"
