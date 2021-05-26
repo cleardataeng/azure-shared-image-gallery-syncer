@@ -1,0 +1,266 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Azure Functions Open API Extension",
+        "version": "2018-09-01-preview"
+    },
+    "host": "management.azure.com",
+    "schemes": [
+        "https"
+    ],
+    "security": [
+        {}
+    ],
+    "securityDefinitions": {},
+    "paths": {
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CustomProviders/resourceProviders/{minirpname}/accountType/{name}": {
+            "get": {
+                "tags": [
+                    "GetAccountType"
+                ],
+                "operationId": "GetAccountType",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "api-version",
+                        "description": "api-version is required. Valid versions are 2018-09-01-preview",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "path",
+                        "name": "subscriptionId",
+                        "description": "This is the Id of the subscription",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "path",
+                        "name": "resourceGroupName",
+                        "description": "This is the resource group name where the managed app is deployed",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "path",
+                        "name": "minirpname",
+                        "description": "This is the resource provider name",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "path",
+                        "name": "name",
+                        "description": "This is the document name",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The OK response",
+                        "schema": {
+                            "$ref": "#/definitions/accountTypeParameters"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "UpdateAccountType"
+                ],
+                "operationId": "UpdateAccountType",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                    "$ref": "#/parameters/ApiVersionParameter"
+                    },
+                    {
+                        "in": "path",
+                        "name": "subscriptionId",
+                        "description": "This is the Id of the subscription",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "path",
+                        "name": "resourceGroupName",
+                        "description": "This is the resource group name where the managed app is deployed",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "path",
+                        "name": "minirpname",
+                        "description": "This is the resource provider name",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "path",
+                        "name": "name",
+                        "description": "This is the document name",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "parameters",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/accountTypeParameters"
+                        },
+                        "description": "Parameters to the accountType PUT function"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The OK response",
+                        "schema": {
+                            "$ref": "#/definitions/accountTypeParameters"
+                        }
+                    }
+                }
+            }
+        },
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CustomProviders/resourceProviders/{minirpname}/transitionAccount": {
+            "post": {
+                "tags": [
+                    "PostTransitionAccount"
+                ],
+                "operationId": "PostTransitionAccount",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "api-version",
+                        "description": "api-version is required. Valid versions are 2018-09-01-preview",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "path",
+                        "name": "subscriptionId",
+                        "description": "This is the Id of the subscription",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "path",
+                        "name": "resourceGroupName",
+                        "description": "This is the resource group name where the managed app is deployed",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "path",
+                        "name": "minirpname",
+                        "description": "This is the resource provider name",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The OK response",
+                        "schema": {}
+                    },
+                    "500": {
+                        "description": "The InternalServerError response",
+                        "schema": {}
+                    }
+                }
+            }            
+        }
+    },
+    "definitions": {
+        "Resource": {
+            "properties": {
+                "id": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Resource Id"
+                },
+                "name": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Resource name"
+                },
+                "type": {
+                    "readOnly": true,
+                    "type": "string",
+                    "description": "Resource type"
+                },
+                "location": {
+                    "type": "string",
+                    "description": "Resource location"
+                }
+            },
+            "description": "The resource definition.",
+            "x-ms-azure-resource": true
+        },
+        "accountTypeParameters": {
+            "properties": {
+                "location": {
+                    "type": "string",
+                    "description": "Region resource will be saved in"
+                },
+                "properties": {
+                    "type": "object",
+                    "properties": {
+                        "provisioningState": {
+                            "type": "string",
+                            "description": "State of the operation"
+                        },
+                        "displayName": {
+                            "type": "string",
+                            "description": "Source display Name"
+                        },
+                        "tenantId": {
+                            "type": "string",
+                            "description": "Source tenant Id"
+                        },
+                        "subscriptionId": {
+                            "type": "string",
+                            "description": "Source subscription Id"
+                        },
+                        "accountType": {
+                            "type": "string",
+                            "description": "Source account-type"
+                        },
+                        "accountTypeStatus": {
+                            "type": "string",
+                            "description": "Source accountTypeStatus"
+                        }
+                    },
+                    "description": "properties property"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "#/definitions/Resource"
+                }
+            ],
+            "description": "Body payload for accountType PUT"
+        }
+    },
+    "parameters": {
+        "ApiVersionParameter": {
+            "name": "api-version",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "Client Api Version."
+        }
+    }
+}
